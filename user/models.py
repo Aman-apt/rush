@@ -70,4 +70,3 @@ class User(AbstractBaseUser, PermissionsMixin):
         
     def short_name(self):
         return self.username
-# 
