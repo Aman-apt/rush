@@ -1,6 +1,4 @@
-from django.db import models
 
-# Create your models here.
 from uuid import uuid4
 from functools import partial
 from django.utils import timezone

@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'jobs',
 
     # Installed Apps
-    'django-rest-framework',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
