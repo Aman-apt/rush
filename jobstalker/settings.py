@@ -16,7 +16,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL="user.User"
+AUTH_USER_MODEL="account.User"
 
 # Application definition
 
@@ -29,10 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # Locals apps
-    'user',
+    'account',
     'jobs',
 
-    # Installed Apps
+    # Installed Packages/modules
     'rest_framework',
 ]
 

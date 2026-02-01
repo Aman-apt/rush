@@ -1,9 +1,9 @@
 from django.contrib import admin
-from django.contrib.admin import AdminSite
-from .models import Jobs
+# from django.contrib.admin import AdminSite
+from .models import Job
 
 
 # Register your models here.
 
 
-admin.site.register(Jobs)
+admin.site.register(Job)

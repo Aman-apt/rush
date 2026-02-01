@@ -1,7 +1,7 @@
 from uuid import uuid4
-from django.utils import timezone
 from django.db import models
-from django.core.settings import AUTH_USER_MODEL
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 STATUS_CHOICES = [
     ('applied', 'Applied'),
@@ -9,7 +9,7 @@ STATUS_CHOICES = [
     ('rejected', 'Rejected'),
 ]
 
-class Jobs(models.Model):
+class Job(models.Model):
     uuid = models.UUIDField(default=uuid4, editable=False, unique=True)
 
     company = models.CharField(_("Company"), max_length=50)
@@ -23,7 +23,7 @@ class Jobs(models.Model):
     note = models.TextField(_("Note"))
 
     class Meta:
-        ordering = ['company'],
+        ordering = ['company',]
 
     def __str__(self):
         return self.company
