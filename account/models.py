@@ -3,6 +3,7 @@ from uuid import uuid4
 from functools import partial
 from django.utils import timezone
 from django.db import models
+from django.conf import settings
 from django.utils.crypto import get_random_string
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
@@ -70,3 +71,16 @@ class User(AbstractBaseUser, PermissionsMixin):
         
     def short_name(self):
         return self.username
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="profile")
+    avatar = models.ImageField(upload_to='../media')
+    bio = models.TextField()
+    phone_number = models.PositiveIntegerField()
+
+    class Meta:
+        ordering = ['user',]
+
+    def __str__(self):
+        return self.user.useranme
